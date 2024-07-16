@@ -5,7 +5,7 @@ from langchain_core.runnables.history import RunnableWithMessageHistory
 import os
 import streamlit as st
 
-os.environ["ANTHROPIC_API_KEY"] = "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"
+os.environ["ANTHROPIC_API_KEY"] = "API_KEY"
 
 model = ChatAnthropic(model="claude-3-sonnet-20240229")
 prompt = ChatPromptTemplate.from_messages(
