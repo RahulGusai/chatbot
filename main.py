@@ -5,8 +5,9 @@ from langchain_core.runnables.history import RunnableWithMessageHistory
 import os
 import streamlit as st
 
-
-model = ChatAnthropic(model="claude-3-sonnet-20240229")
+api_key = "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"
+llm = ChatAnthropic(model="claude-3-sonnet-20240229",
+                    anthropic_api_key=api_key)
 prompt = ChatPromptTemplate.from_messages(
     [
         (
@@ -17,7 +18,7 @@ prompt = ChatPromptTemplate.from_messages(
     ]
 )
 
-chain = prompt | model
+chain = prompt | llm
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
